@@ -1,0 +1,106 @@
+{
+    "py": {
+        "classTypes": ["class_definition"],
+        "functionTypes": ["function_definition"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["function_definition"],
+        "namespaceTypes": ["module"]
+    },
+    "js": {
+        "classTypes": ["class_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["statement_block"],
+        "methodTypes": ["method_definition"],
+        "namespaceTypes": ["program"]
+    },
+    "ts": {
+        "classTypes": ["class_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier", "type_identifier"],
+        "blockTypes": ["statement_block", "class_body"],
+        "methodTypes": ["method_definition"],
+        "namespaceTypes": ["program", "export_statement", "export_declaration"]
+    },
+    "java": {
+        "classTypes": ["class_declaration"],
+        "functionTypes": ["method_declaration"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "c": {
+        "classTypes": ["struct_declaration", "enum_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "cpp": {
+        "classTypes": ["class_declaration", "struct_declaration", "enum_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "go": {
+        "classTypes": ["struct_declaration", "enum_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "html": {
+        "classTypes": ["class_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "css": {
+        "classTypes": ["class_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "json": {
+        "classTypes": ["object_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "yaml": {
+        "classTypes": ["object_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "toml": {
+        "classTypes": ["object_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    },
+    "sql": {
+        "classTypes": ["object_declaration"],
+        "functionTypes": ["function_declaration", "arrow_function"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program"]
+    }
+}

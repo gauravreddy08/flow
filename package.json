@@ -1,0 +1,87 @@
+{
+  "name": "flow",
+  "displayName": "Flow",
+  "description": "A chat interface for VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "flow.startChat",
+        "title": "Start Flow Chat"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "flow.startChat",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "flow-chat",
+          "title": "Flow Chat",
+          "icon": "$(comment-discussion)"
+        }
+      ]
+    },
+    "views": {
+      "flow-chat": [
+        {
+          "type": "webview",
+          "id": "flow.chatView",
+          "name": "Flow Chat"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Flow",
+      "properties": {
+        "flow.notificationPosition": {
+          "type": "string",
+          "enum": ["left", "right"],
+          "default": "left",
+          "description": "Position of Flow notifications"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.17.46",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.56.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@xyflow/react": "^12.6.0",
+    "dotenv": "^16.5.0",
+    "openai": "^4.97.0",
+    "tree-sitter-wasms": "^0.1.12",
+    "web-tree-sitter": "^0.20.8"
+  }
+}
