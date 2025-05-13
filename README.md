@@ -1,6 +1,6 @@
 # Introducing Flow
 
-![Demo Video](/assets/flow.mp4)
+https://github.com/user-attachments/assets/369c2377-bf68-4204-b0cc-5e07710fd192
 
 **Flow** is a lightweight clone of agentic IDEs like Cursor and Windsurf. Built as a VSCode extension, this project helped me dive deep into understanding the inner workings of AI-powered development environments.
 
