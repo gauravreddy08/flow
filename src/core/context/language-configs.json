@@ -1,0 +1,182 @@
+{
+    "py": {
+        "classTypes": ["class_definition"],
+        "functionTypes": ["function_definition"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["block"],
+        "methodTypes": ["function_definition"],
+        "namespaceTypes": ["module"],
+        "dependencyTypes": ["import_statement", "import_from_statement"],
+        "callTypes": ["call"]
+    },
+    "js": {
+        "classTypes": ["class_declaration", "class_expression"],
+        "functionTypes": ["function_declaration", "function_expression", "arrow_function", "generator_function_declaration", "generator_function_expression"],
+        "identifierTypes": ["identifier", "property_identifier"],
+        "blockTypes": ["statement_block", "class_body"],
+        "methodTypes": ["method_definition"],
+        "namespaceTypes": ["program", "object"],
+        "dependencyTypes": ["import_statement", "import_declaration", "require_call"],
+        "callTypes": ["call_expression"]
+    },
+    "jsx": {
+        "classTypes": ["class_declaration", "class_expression"],
+        "functionTypes": ["function_declaration", "function_expression", "arrow_function", "generator_function_declaration", "generator_function_expression"],
+        "identifierTypes": ["identifier", "property_identifier"],
+        "blockTypes": ["statement_block", "class_body", "jsx_element"],
+        "methodTypes": ["method_definition"],
+        "namespaceTypes": ["program", "object"],
+        "dependencyTypes": ["import_statement", "import_declaration", "require_call"],
+        "callTypes": ["call_expression", "jsx_self_closing_element", "jsx_element"]
+    },
+    "ts": {
+        "classTypes": ["class_declaration", "class_expression", "interface_declaration"],
+        "functionTypes": ["function_declaration", "function_expression", "arrow_function", "generator_function_declaration", "generator_function_expression"],
+        "identifierTypes": ["identifier", "property_identifier", "type_identifier"],
+        "blockTypes": ["statement_block", "class_body", "object_type"],
+        "methodTypes": ["method_definition", "method_signature"],
+        "namespaceTypes": ["program", "module", "namespace_declaration", "object"],
+        "dependencyTypes": ["import_statement", "import_declaration", "require_call"],
+        "callTypes": ["call_expression"]
+    },
+    "tsx": {
+        "classTypes": ["class_declaration", "class_expression", "interface_declaration"],
+        "functionTypes": ["function_declaration", "function_expression", "arrow_function", "generator_function_declaration", "generator_function_expression"],
+        "identifierTypes": ["identifier", "property_identifier", "type_identifier"],
+        "blockTypes": ["statement_block", "class_body", "object_type", "jsx_element"],
+        "methodTypes": ["method_definition", "method_signature"],
+        "namespaceTypes": ["program", "module", "namespace_declaration", "object"],
+        "dependencyTypes": ["import_statement", "import_declaration", "require_call"],
+        "callTypes": ["call_expression", "jsx_self_closing_element", "jsx_element"]
+    },
+    "java": {
+        "classTypes": ["class_declaration", "enum_declaration", "interface_declaration"],
+        "functionTypes": ["method_declaration", "constructor_declaration"],
+        "identifierTypes": ["identifier"],
+        "blockTypes": ["class_body", "block", "enum_body", "interface_body"],
+        "methodTypes": ["method_declaration", "constructor_declaration"],
+        "namespaceTypes": ["program", "package_declaration"],
+        "dependencyTypes": ["import_declaration"],
+        "callTypes": ["method_invocation"]
+    },
+    "c": {
+        "classTypes": ["struct_specifier", "enum_specifier", "union_specifier"],
+        "functionTypes": ["function_definition", "declaration"],
+        "identifierTypes": ["identifier", "field_identifier", "type_identifier"],
+        "blockTypes": ["compound_statement", "field_declaration_list"],
+        "methodTypes": ["function_definition"],
+        "namespaceTypes": ["translation_unit"],
+        "dependencyTypes": ["preproc_include"],
+        "callTypes": ["call_expression", "function_call"]
+    },
+    "cpp": {
+        "classTypes": ["class_specifier", "struct_specifier", "enum_specifier", "union_specifier"],
+        "functionTypes": ["function_definition", "declaration", "template_declaration"],
+        "identifierTypes": ["identifier", "field_identifier", "type_identifier"],
+        "blockTypes": ["compound_statement", "field_declaration_list", "namespace_definition"],
+        "methodTypes": ["function_definition"],
+        "namespaceTypes": ["translation_unit", "namespace_definition"],
+        "dependencyTypes": ["preproc_include"],
+        "callTypes": ["call_expression", "function_call"]
+    },
+    "go": {
+        "classTypes": ["type_declaration", "type_spec", "struct_type"],
+        "functionTypes": ["function_declaration", "method_declaration"],
+        "identifierTypes": ["identifier", "field_identifier"],
+        "blockTypes": ["block", "field_declaration_list"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["source_file", "package_clause"],
+        "dependencyTypes": ["import_declaration", "import_spec"],
+        "callTypes": ["call_expression"]
+    },
+    "ruby": {
+        "classTypes": ["class", "module"],
+        "functionTypes": ["method", "singleton_method", "lambda"],
+        "identifierTypes": ["identifier", "constant"],
+        "blockTypes": ["do_block", "body_statement"],
+        "methodTypes": ["method", "singleton_method"],
+        "namespaceTypes": ["program", "module"],
+        "dependencyTypes": ["call"],
+        "callTypes": ["call", "method_call"]
+    },
+    "php": {
+        "classTypes": ["class_declaration", "interface_declaration", "trait_declaration"],
+        "functionTypes": ["function_definition", "method_declaration"],
+        "identifierTypes": ["name", "variable_name"],
+        "blockTypes": ["compound_statement", "declaration_list"],
+        "methodTypes": ["method_declaration"],
+        "namespaceTypes": ["program", "namespace_definition"],
+        "dependencyTypes": ["namespace_use_declaration", "include_expression", "require_expression"],
+        "callTypes": ["function_call_expression", "method_call_expression"]
+    },
+    "html": {
+        "classTypes": ["element"],
+        "functionTypes": ["script_element"],
+        "identifierTypes": ["tag_name", "attribute_name"],
+        "blockTypes": ["element"],
+        "methodTypes": ["script_element"],
+        "namespaceTypes": ["document"],
+        "dependencyTypes": ["script_element", "link_element"],
+        "callTypes": []
+    },
+    "css": {
+        "classTypes": ["rule_set", "keyframe_block_list"],
+        "functionTypes": ["declaration"],
+        "identifierTypes": ["class_selector", "id_selector", "tag_name", "property_name"],
+        "blockTypes": ["block", "stylesheet"],
+        "methodTypes": ["declaration"],
+        "namespaceTypes": ["stylesheet"],
+        "dependencyTypes": ["import_statement", "url_function"],
+        "callTypes": ["function_name"]
+    },
+    "json": {
+        "classTypes": ["object"],
+        "functionTypes": [],
+        "identifierTypes": ["string", "property_name"],
+        "blockTypes": ["object"],
+        "methodTypes": [],
+        "namespaceTypes": ["document"],
+        "dependencyTypes": [],
+        "callTypes": []
+    },
+    "yaml": {
+        "classTypes": ["block_mapping"],
+        "functionTypes": [],
+        "identifierTypes": ["string_scalar", "plain_scalar"],
+        "blockTypes": ["block_mapping"],
+        "methodTypes": [],
+        "namespaceTypes": ["stream"],
+        "dependencyTypes": [],
+        "callTypes": []
+    },
+    "rust": {
+        "classTypes": ["struct_item", "enum_item", "trait_item", "impl_item"],
+        "functionTypes": ["function_item"],
+        "identifierTypes": ["identifier", "type_identifier"],
+        "blockTypes": ["block", "declaration_list", "field_declaration_list"],
+        "methodTypes": ["function_item"],
+        "namespaceTypes": ["source_file", "mod_item"],
+        "dependencyTypes": ["use_declaration"],
+        "callTypes": ["call_expression"]
+    },
+    "swift": {
+        "classTypes": ["class_declaration", "struct_declaration", "enum_declaration", "protocol_declaration"],
+        "functionTypes": ["function_declaration"],
+        "identifierTypes": ["identifier", "type_identifier"],
+        "blockTypes": ["code_block"],
+        "methodTypes": ["function_declaration"],
+        "namespaceTypes": ["source_file"],
+        "dependencyTypes": ["import_declaration"],
+        "callTypes": ["call_expression"]
+    },
+    "kotlin": {
+        "classTypes": ["class_declaration", "object_declaration", "interface_declaration"],
+        "functionTypes": ["function_declaration"],
+        "identifierTypes": ["simple_identifier", "type_identifier"],
+        "blockTypes": ["class_body", "block"],
+        "methodTypes": ["function_declaration"],
+        "namespaceTypes": ["file", "package_header"],
+        "dependencyTypes": ["import_list"],
+        "callTypes": ["call_expression"]
+    }
+}

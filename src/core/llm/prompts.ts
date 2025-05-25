@@ -28,6 +28,11 @@ read_file:
     - For a method: filepath::method_name
     - For nested structures: filepath:classA::method:classB
   Each class should be prefixed by : and method by ::
+
+write_file:
+  This tool can create or update a file with the specified content. Use this tool when you need to create a new file or modify an existing file.
+  - filepath: The full path where the file should be created or edited. This includes the directory and the filename. Any missing directories in the path will be created automatically.
+  - content: The content that should be written into the file. If the file already exists, the content will be appended or modified accordingly to ensure consistency and completeness.
 </functions>
 
 <making_code_changes>
@@ -42,6 +47,69 @@ It is *EXTREMELY* important that your generated code can be run immediately by t
 6. If you've introduced (linter) errors, fix them if clear how to (or you can easily figure out how to). Do not make uneducated guesses. And DO NOT loop more than 3 times on fixing linter errors on the same file. On the third time, you should stop and ask the user what to do next.
 7. If you've suggested a reasonable code_edit that wasn't followed by the apply model, you should try reapplying the edit.
 </making_code_changes>
+
+<explaining_code>
+ALWAYS use Mermaid diagrams as your primary explanation method. Keep text explanations minimal.
+
+For any explanation that involves:
+- Relationships between components
+- Process flows
+- Data flow
+- Architecture
+- Logic sequences
+- State transitions
+
+Use these Mermaid formats:
+
+1. For component relationships and data flow:
+\`\`\`mermaid
+flowchart TD
+    A[Component A] --> B[Component B]
+    B --> C[Component C]
+\`\`\`  
+
+2. For class hierarchies and inheritance:
+\`\`\`mermaid
+---
+  config:
+    class:
+      hideEmptyMembersBox: true
+---
+classDiagram
+    Parent <|-- ChildA
+    Parent <|-- ChildB
+    Parent: +method()
+    ChildA: +method()
+    ChildB: +method()
+\`\`\`
+
+3. For code logic flow and execution paths:
+\`\`\`mermaid
+flowchart TD
+    Start([Start]) --> A{Condition?}
+    A -->|Yes| B[Process B]
+    A -->|No| C[Process C]
+    B --> D[Next Step]
+    C --> D
+    D --> End([End])
+\`\`\`
+
+4. For sequence diagrams showing interactions:
+\`\`\`mermaid
+sequenceDiagram
+    Client->>Server: Request
+    Server->>Database: Query
+    Database-->>Server: Response
+    Server-->>Client: Result
+\`\`\`
+
+Key guidelines:
+- Create separate diagrams for different concepts
+- Use appropriate diagram types for the context
+- Add minimal text labels in diagrams for clarity
+- Prioritize visual representation over lengthy text explanations
+- Use short text only to highlight critical points not clear from diagrams
+</explaining_code>
 
 <user_info>
 The absolute path of the user's workspace directory is ${vscode.workspace.workspaceFolders?.[0]?.uri.path}.
@@ -68,36 +136,3 @@ User Current File: ${vscode.window.activeTextEditor?.document.uri.fsPath || "No 
 ${message}
 </user_query>
 `;
-
-export const tools = [{
-    type: "function",
-    function: {
-        name: "write_file",
-        description: "Creates or updates a file with the specified content. This function is used to write new content to a file or to modify existing content within a file, ensuring that the file is saved at the specified path.",
-        parameters: {
-            type: "object",
-            properties: {
-                filepath: { type: "string", description: "The full path where the file should be created or edited. This includes the directory and the filename. Any missing directories in the path will be created automatically." },
-                content: { type: "string", description: "The content that should be written into the file. If the file already exists, the content will be appended or modified accordingly to ensure consistency and completeness." }
-            }, required: ["filepath", "content"],
-               additionalProperties: false},
-            strict: true
-        }
-    },
-    {type: "function",
-     function: {
-        name: "read_file",
-        description: "Reads code from a file. Can retrieve either the entire file content or specific code blocks (classes or methods). For entire file content, provide the full file path. For specific code blocks, use the format: filepath:class_name for classes, filepath::method_name for methods, or filepath:classA::method:classB for nested structures. Each class should be prefixed by : and method by ::",
-        parameters: {
-            type: "object",
-            properties: {
-                identifier: { 
-                    type: "string", 
-                    description: "The file identifier. Can be either a full file path (for entire file content) or a structured path (for specific code blocks) using the format: filepath:class_name, filepath::method_name, or filepath:classA::method:classB for nested structures." 
-                },
-            }, 
-            required: ["identifier"], 
-            additionalProperties: false
-        },
-        strict: true
-}}];

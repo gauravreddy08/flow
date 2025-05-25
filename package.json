@@ -16,6 +16,14 @@
       {
         "command": "flow.startChat",
         "title": "Start Flow Chat"
+      },
+      {
+        "command": "flow.openSettings",
+        "title": "BYOK: Configure Flow API Keys"
+      },
+      {
+        "command": "flow.createEnvTemplate",
+        "title": "Create .env Template for Flow"
       }
     ],
     "keybindings": [
@@ -23,6 +31,11 @@
         "command": "flow.startChat",
         "key": "ctrl+shift+c",
         "mac": "cmd+shift+c"
+      },
+      {
+        "command": "flow.openSettings",
+        "key": "ctrl+shift+k",
+        "mac": "cmd+shift+k"
       }
     ],
     "viewsContainers": {
@@ -48,9 +61,36 @@
       "properties": {
         "flow.notificationPosition": {
           "type": "string",
-          "enum": ["left", "right"],
+          "enum": [
+            "left",
+            "right"
+          ],
           "default": "left",
           "description": "Position of Flow notifications"
+        },
+        "flow.apiKeys.openai": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API key for GPT models",
+          "markdownDescription": "Your OpenAI API key. Get one from [OpenAI API Keys](https://platform.openai.com/api-keys)",
+          "format": "password",
+          "scope": "application"
+        },
+        "flow.apiKeys.anthropic": {
+          "type": "string",
+          "default": "",
+          "description": "Anthropic API key for Claude models",
+          "markdownDescription": "Your Anthropic API key. Get one from [Anthropic Console](https://console.anthropic.com/)",
+          "format": "password",
+          "scope": "application"
+        },
+        "flow.apiKeys.google": {
+          "type": "string",
+          "default": "",
+          "description": "Google AI API key for Gemini models",
+          "markdownDescription": "Your Google AI API key. Get one from [Google AI Studio](https://makersuite.google.com/app/apikey)",
+          "format": "password",
+          "scope": "application"
         }
       }
     }
@@ -64,10 +104,10 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.17.46",
-    "@types/vscode": "^1.85.0",
+    "@types/react": "^19.1.4",
+    "@types/vscode": "^1.100.0",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "@vscode/test-electron": "^2.3.8",
@@ -78,10 +118,15 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^1.2.12",
+    "@ai-sdk/google": "^1.2.18",
+    "@ai-sdk/openai": "^1.3.22",
     "@xyflow/react": "^12.6.0",
+    "ai": "^4.3.16",
     "dotenv": "^16.5.0",
     "openai": "^4.97.0",
     "tree-sitter-wasms": "^0.1.12",
-    "web-tree-sitter": "^0.20.8"
+    "web-tree-sitter": "^0.20.8",
+    "zod": "^3.25.23"
   }
 }
